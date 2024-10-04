@@ -13,11 +13,13 @@ ${OPEN_DEMO_SCROOL_SCREEN_BUTTON_IOS}  xpath=//XCUIElementTypeButton[@name="Go t
 *** Keywords ***
 Open Counter Screen
     [Arguments]    ${platform} 
+    [Documentation]   Hành động nhấn nút chuyển vào màn hình Counter
     Run Keyword If    '${platform}' == 'android'    Click Element    ${OPEN_COUNTER_SCREEN_BUTTON_ANDROID} 
     Run Keyword If    '${platform}' == 'ios'    Click Element    ${OPEN_COUNTER_SCREEN_BUTTON_IOS}
 
 Open Demo Scroll Screen
     [Arguments]    ${platform}
+    [Documentation]   Hành động nhấn nút chuyển vào man hình Scroll
     Run Keyword If    '${platform}' == 'android'    Click Element    ${OPEN_DEMO_SCROOL_SCREEN_BUTTON_ANDROID}
     Run Keyword If    '${platform}' == 'ios'    Click Element    ${OPEN_DEMO_SCROOL_SCREEN_BUTTON_IOS}
 

@@ -9,6 +9,7 @@ Resource       ../Resource/ProjectPage/ScroollPage.robot
 
 *** Test Cases ***
 Test Case Android 1
+    [Documentation]    Test case for Android
     RunApplication    android
     Open Counter Screen    android
     Increment Counter Value Test Case    android    5
@@ -21,6 +22,7 @@ Test Case Android 1
     Close Application
 
 Test Case IOS 1
+    [Documentation]    Test case for IOS
     RunApplication    ios
     Open Counter Screen    ios
     Increment Counter Value Test Case    ios    5
