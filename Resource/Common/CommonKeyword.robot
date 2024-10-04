@@ -25,7 +25,7 @@ RunApplication
     Run Keyword If    '${platform}' == 'ios'    Open IOS Application
 
 Open Android Application
-    Open Application    ${APPIUM_SERVER}    platformName=Android    deviceName=${ANDROID_DEVICE_NAME}    platformVersion=${ANDROID_PLATFORM_VERSION}    udid=${ANDROID_UDID}    appPackage=${ANDROID_APP_PACKAGE}    appActivity=${ANDROID_APP_ACTIVITY}    automationName=${ANDROID_AUTOMATION_NAME}
+    Open Application    ${APPIUM_SERVER}    platformName=Android    deviceName=${ANDROID_DEVICE_NAME}    platformVersion=${ANDROID_PLATFORM_VERSION}    udid=${ANDROID_UDID}    appPackage=${ANDROID_APP_PACKAGE}    appActivity=${ANDROID_APP_ACTIVITY}    automationName=${ANDROID_AUTOMATION_NAME}   fullReset=${True}
 
 Open IOS Application
     Open Application    ${APPIUM_SERVER}    platformName=iOS    deviceName=${IOS_DEVICE_NAME}    platformVersion=${IOS_PLATFORM_VERSION}    udid=${IOS_UDID}    bundleId=${IOS_APP_BUNDLE_ID}    automationName=${IOS_AUTOMATION_NAME}
