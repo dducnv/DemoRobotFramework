@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.10.11 on darwin)" generated="2024-10-04T14:07:22.241079" rpa="false" schemaversion="5">
+<suite id="s1" name="DemoRobotFramework" source="/Users/hongtuan/Desktop/PythonProjects/DemoRobotFramework">
+<suite id="s1-s1" name="TestCase" source="/Users/hongtuan/Desktop/PythonProjects/DemoRobotFramework/TestCase">
+<suite id="s1-s1-s1" name="AppTestCase" source="/Users/hongtuan/Desktop/PythonProjects/DemoRobotFramework/TestCase/AppTestCase.robot">
+<test id="s1-s1-s1-t1" name="Test Case IOS 1" line="23">
+<kw name="RunApplication" owner="CommonKeyword">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Open Android Application</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:23.393029" elapsed="0.001949"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open IOS Application" owner="CommonKeyword">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=${IOS_DEVICE_NAME}</arg>
+<arg>platformVersion=${IOS_PLATFORM_VERSION}</arg>
+<arg>udid=${IOS_UDID}</arg>
+<arg>bundleId=${IOS_APP_BUNDLE_ID}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-10-04T14:07:23.395734" elapsed="15.256489"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:07:23.395509" elapsed="15.260171"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Open IOS Application</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:23.395225" elapsed="15.260608"/>
+</kw>
+<arg>ios</arg>
+<status status="PASS" start="2024-10-04T14:07:23.390782" elapsed="15.265302"/>
+</kw>
+<kw name="Open Counter Screen" owner="HomePage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${OPEN_COUNTER_SCREEN_BUTTON_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:38.658934" elapsed="0.005159"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:38.749432" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name="Go to Counter Screen"]'.</msg>
+<msg time="2024-10-04T14:07:39.456315" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="Go to Counter Screen"]</msg>
+<arg>${OPEN_COUNTER_SCREEN_BUTTON_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:38.718583" elapsed="0.738650"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${OPEN_COUNTER_SCREEN_BUTTON_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:38.664505" elapsed="0.793239"/>
+</kw>
+<arg>ios</arg>
+<status status="PASS" start="2024-10-04T14:07:38.657228" elapsed="0.800765"/>
+</kw>
+<kw name="Increment Counter Value Test Case" owner="CounterPage">
+<kw name="Get Counter Value" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:39.627078" level="INFO">Element 'xpath=//XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]' text is '0' </msg>
+<msg time="2024-10-04T14:07:39.627444" level="INFO">xpath criteria: //XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]</msg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-10-04T14:07:39.464191" elapsed="0.163531"/>
+</kw>
+<msg time="2024-10-04T14:07:39.628237" level="INFO">${counter_value} = 0</msg>
+<var>${counter_value}</var>
+<arg>'${platform}' == 'android'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_ANDROID}</arg>
+<arg>ELSE IF</arg>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:39.463827" elapsed="0.164597"/>
+</kw>
+<return>
+<value>${counter_value}</value>
+<status status="PASS" start="2024-10-04T14:07:39.628680" elapsed="0.000229"/>
+</return>
+<msg time="2024-10-04T14:07:39.629188" level="INFO">${counter_value} = 0</msg>
+<var>${counter_value}</var>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:39.462814" elapsed="0.166517"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-10-04T14:07:39.630206" level="INFO">${int_counter_value} = 0</msg>
+<var>${int_counter_value}</var>
+<arg>${counter_value}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-10-04T14:07:39.629642" elapsed="0.000714"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-04T14:07:39.635063" level="WARN">hello 0</msg>
+<arg>hello ${counter_value}</arg>
+<arg>level=WARN</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-04T14:07:39.630637" elapsed="0.005209"/>
+</kw>
+<while condition="${int_counter_value} &lt; ${counter_value_compare}">
+<iter>
+<kw name="Increment Counter" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:39.637610" elapsed="0.000310"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:39.640325" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name='Increment Counter']'.</msg>
+<msg time="2024-10-04T14:07:40.253820" level="INFO">xpath criteria: //XCUIElementTypeButton[@name='Increment Counter']</msg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:39.638223" elapsed="0.615770"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:39.638051" elapsed="0.616159"/>
+</kw>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:39.637175" elapsed="0.617159"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:07:42.384646" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:40.254493" elapsed="2.136409"/>
+</kw>
+<kw name="Get Counter Value" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:42.813657" level="INFO">Element 'xpath=//XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]' text is '1' </msg>
+<msg time="2024-10-04T14:07:42.813916" level="INFO">xpath criteria: //XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]</msg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-10-04T14:07:42.474105" elapsed="0.339887"/>
+</kw>
+<msg time="2024-10-04T14:07:42.815266" level="INFO">${counter_value} = 1</msg>
+<var>${counter_value}</var>
+<arg>'${platform}' == 'android'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_ANDROID}</arg>
+<arg>ELSE IF</arg>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:42.473664" elapsed="0.341721"/>
+</kw>
+<return>
+<value>${counter_value}</value>
+<status status="PASS" start="2024-10-04T14:07:42.815527" elapsed="0.000108"/>
+</return>
+<msg time="2024-10-04T14:07:42.815757" level="INFO">${counter_value} = 1</msg>
+<var>${counter_value}</var>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:42.471755" elapsed="0.344068"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-10-04T14:07:42.816942" level="INFO">${int_counter_value} = 1</msg>
+<var>${int_counter_value}</var>
+<arg>${counter_value}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-10-04T14:07:42.815956" elapsed="0.001212"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:07:39.636500" elapsed="3.180918"/>
+</iter>
+<iter>
+<kw name="Increment Counter" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:42.818334" elapsed="0.000170"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:42.820519" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name='Increment Counter']'.</msg>
+<msg time="2024-10-04T14:07:43.459154" level="INFO">xpath criteria: //XCUIElementTypeButton[@name='Increment Counter']</msg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:42.818812" elapsed="0.644174"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:42.818615" elapsed="0.648223"/>
+</kw>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:42.817996" elapsed="0.649257"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:07:45.472099" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:43.468893" elapsed="2.006240"/>
+</kw>
+<kw name="Get Counter Value" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:45.713352" level="INFO">Element 'xpath=//XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]' text is '2' </msg>
+<msg time="2024-10-04T14:07:45.713516" level="INFO">xpath criteria: //XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]</msg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-10-04T14:07:45.480259" elapsed="0.233334"/>
+</kw>
+<msg time="2024-10-04T14:07:45.713735" level="INFO">${counter_value} = 2</msg>
+<var>${counter_value}</var>
+<arg>'${platform}' == 'android'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_ANDROID}</arg>
+<arg>ELSE IF</arg>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:45.479337" elapsed="0.234437"/>
+</kw>
+<return>
+<value>${counter_value}</value>
+<status status="PASS" start="2024-10-04T14:07:45.713859" elapsed="0.000101"/>
+</return>
+<msg time="2024-10-04T14:07:45.714061" level="INFO">${counter_value} = 2</msg>
+<var>${counter_value}</var>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:45.477353" elapsed="0.236753"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-10-04T14:07:45.714976" level="INFO">${int_counter_value} = 2</msg>
+<var>${int_counter_value}</var>
+<arg>${counter_value}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-10-04T14:07:45.714230" elapsed="0.000927"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:07:42.817547" elapsed="2.897794"/>
+</iter>
+<iter>
+<kw name="Increment Counter" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:45.717046" elapsed="0.000879"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:45.722415" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name='Increment Counter']'.</msg>
+<msg time="2024-10-04T14:07:46.239392" level="INFO">xpath criteria: //XCUIElementTypeButton[@name='Increment Counter']</msg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:45.718984" elapsed="0.520829"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:45.718087" elapsed="0.522019"/>
+</kw>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:45.716122" elapsed="0.524195"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:07:48.242787" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:46.240592" elapsed="2.006009"/>
+</kw>
+<kw name="Get Counter Value" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:48.494453" level="INFO">Element 'xpath=//XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]' text is '3' </msg>
+<msg time="2024-10-04T14:07:48.494794" level="INFO">xpath criteria: //XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]</msg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-10-04T14:07:48.251724" elapsed="0.243357"/>
+</kw>
+<msg time="2024-10-04T14:07:48.495424" level="INFO">${counter_value} = 3</msg>
+<var>${counter_value}</var>
+<arg>'${platform}' == 'android'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_ANDROID}</arg>
+<arg>ELSE IF</arg>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:48.250760" elapsed="0.244945"/>
+</kw>
+<return>
+<value>${counter_value}</value>
+<status status="PASS" start="2024-10-04T14:07:48.495984" elapsed="0.000304"/>
+</return>
+<msg time="2024-10-04T14:07:48.496450" level="INFO">${counter_value} = 3</msg>
+<var>${counter_value}</var>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:48.249020" elapsed="0.247499"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-10-04T14:07:48.497453" level="INFO">${int_counter_value} = 3</msg>
+<var>${int_counter_value}</var>
+<arg>${counter_value}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-10-04T14:07:48.496662" elapsed="0.001323"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:07:45.715447" elapsed="2.782629"/>
+</iter>
+<iter>
+<kw name="Increment Counter" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:48.498704" elapsed="0.000195"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:48.501934" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name='Increment Counter']'.</msg>
+<msg time="2024-10-04T14:07:48.999843" level="INFO">xpath criteria: //XCUIElementTypeButton[@name='Increment Counter']</msg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:48.499296" elapsed="0.500932"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:48.499018" elapsed="0.501612"/>
+</kw>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:48.498411" elapsed="0.502438"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:07:51.003730" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:49.001017" elapsed="2.003815"/>
+</kw>
+<kw name="Get Counter Value" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:51.236251" level="INFO">Element 'xpath=//XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]' text is '4' </msg>
+<msg time="2024-10-04T14:07:51.236442" level="INFO">xpath criteria: //XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]</msg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-10-04T14:07:51.006725" elapsed="0.229797"/>
+</kw>
+<msg time="2024-10-04T14:07:51.236671" level="INFO">${counter_value} = 4</msg>
+<var>${counter_value}</var>
+<arg>'${platform}' == 'android'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_ANDROID}</arg>
+<arg>ELSE IF</arg>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:51.006343" elapsed="0.230373"/>
+</kw>
+<return>
+<value>${counter_value}</value>
+<status status="PASS" start="2024-10-04T14:07:51.236805" elapsed="0.000085"/>
+</return>
+<msg time="2024-10-04T14:07:51.236990" level="INFO">${counter_value} = 4</msg>
+<var>${counter_value}</var>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:51.005660" elapsed="0.231369"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-10-04T14:07:51.237354" level="INFO">${int_counter_value} = 4</msg>
+<var>${int_counter_value}</var>
+<arg>${counter_value}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-10-04T14:07:51.237159" elapsed="0.000240"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:07:48.498109" elapsed="2.739341"/>
+</iter>
+<iter>
+<kw name="Increment Counter" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:51.237926" elapsed="0.000135"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:51.241212" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name='Increment Counter']'.</msg>
+<msg time="2024-10-04T14:07:51.838655" level="INFO">xpath criteria: //XCUIElementTypeButton[@name='Increment Counter']</msg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:51.238295" elapsed="0.600526"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${COUNTER_INCREMENT_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:51.238151" elapsed="0.600804"/>
+</kw>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:51.237697" elapsed="0.601342"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:07:53.840665" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:51.839316" elapsed="2.002310"/>
+</kw>
+<kw name="Get Counter Value" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:53.946178" level="INFO">Element 'xpath=//XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]' text is '5' </msg>
+<msg time="2024-10-04T14:07:53.946331" level="INFO">xpath criteria: //XCUIElementTypeStaticText[contains(@value, 'You have pushed the button this many times:')]/following-sibling::XCUIElementTypeStaticText[1]</msg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<status status="PASS" start="2024-10-04T14:07:53.842903" elapsed="0.103495"/>
+</kw>
+<msg time="2024-10-04T14:07:53.946535" level="INFO">${counter_value} = 5</msg>
+<var>${counter_value}</var>
+<arg>'${platform}' == 'android'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_ANDROID}</arg>
+<arg>ELSE IF</arg>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Get Text</arg>
+<arg>${COUNTER_LABEL_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:53.842610" elapsed="0.103967"/>
+</kw>
+<return>
+<value>${counter_value}</value>
+<status status="PASS" start="2024-10-04T14:07:53.946662" elapsed="0.000145"/>
+</return>
+<msg time="2024-10-04T14:07:53.946908" level="INFO">${counter_value} = 5</msg>
+<var>${counter_value}</var>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:53.842102" elapsed="0.104854"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-10-04T14:07:53.947572" level="INFO">${int_counter_value} = 5</msg>
+<var>${int_counter_value}</var>
+<arg>${counter_value}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-10-04T14:07:53.947074" elapsed="0.000943"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:07:51.237481" elapsed="2.710619"/>
+</iter>
+<status status="PASS" start="2024-10-04T14:07:39.636494" elapsed="14.312018"/>
+</while>
+<return>
+<value>${counter_value}</value>
+<status status="PASS" start="2024-10-04T14:07:53.948569" elapsed="0.000168"/>
+</return>
+<arg>ios</arg>
+<arg>5</arg>
+<status status="PASS" start="2024-10-04T14:07:39.458995" elapsed="14.489822"/>
+</kw>
+<kw name="Counter Back" owner="CounterPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${BACK_BUTTON_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:53.949349" elapsed="0.000159"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:53.951373" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name='Back']'.</msg>
+<msg time="2024-10-04T14:07:54.653910" level="INFO">xpath criteria: //XCUIElementTypeButton[@name='Back']</msg>
+<arg>${BACK_BUTTON_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:53.950042" elapsed="0.707224"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${BACK_BUTTON_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:53.949606" elapsed="0.708072"/>
+</kw>
+<arg>ios</arg>
+<status status="PASS" start="2024-10-04T14:07:53.949076" elapsed="0.709334"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:07:56.663183" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:54.659586" elapsed="2.004554"/>
+</kw>
+<kw name="Open Demo Scroll Screen" owner="HomePage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${OPEN_DEMO_SCROOL_SCREEN_BUTTON_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:56.666555" elapsed="0.000576"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:07:56.670893" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name="Go to Demo Scroll"]'.</msg>
+<msg time="2024-10-04T14:07:57.259149" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="Go to Demo Scroll"]</msg>
+<arg>${OPEN_DEMO_SCROOL_SCREEN_BUTTON_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:07:56.667995" elapsed="0.591367"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${OPEN_DEMO_SCROOL_SCREEN_BUTTON_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:56.667451" elapsed="0.592403"/>
+</kw>
+<arg>ios</arg>
+<status status="PASS" start="2024-10-04T14:07:56.665575" elapsed="0.594523"/>
+</kw>
+<kw name="Run Test Scroll" owner="ScroollPage">
+<kw name="Scroll Up" owner="ScroollPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Scroll Up</arg>
+<arg>${SCROLL_VIEW_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:57.263661" elapsed="0.000736"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Scroll Up" owner="ScroollPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Scroll Up</arg>
+<arg>${SCROLL_VIEW_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:57.267247" elapsed="0.000572"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'ios'</arg>
+<arg>Scroll Up</arg>
+<arg>${SCROLL_VIEW_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:57.268221" elapsed="0.000608"/>
+</kw>
+<arg>${SCROLL_VIEW_IOS}</arg>
+<status status="PASS" start="2024-10-04T14:07:57.266132" elapsed="0.004069"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Scroll Up</arg>
+<arg>${SCROLL_VIEW_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:57.265245" elapsed="0.005048"/>
+</kw>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:57.263210" elapsed="0.007149"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:07:59.271865" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:57.270469" elapsed="2.004124"/>
+</kw>
+<kw name="Scroll Down" owner="ScroollPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Scroll Down</arg>
+<arg>${SCROLL_VIEW_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:59.278569" elapsed="0.000802"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Scroll Down" owner="ScroollPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Scroll Down</arg>
+<arg>${SCROLL_VIEW_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:59.281392" elapsed="0.000361"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'ios'</arg>
+<arg>Scroll Down</arg>
+<arg>${SCROLL_VIEW_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:59.281883" elapsed="0.000148"/>
+</kw>
+<arg>${SCROLL_VIEW_IOS}</arg>
+<status status="PASS" start="2024-10-04T14:07:59.281046" elapsed="0.001091"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Scroll Down</arg>
+<arg>${SCROLL_VIEW_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:07:59.279768" elapsed="0.002434"/>
+</kw>
+<arg>${platform}</arg>
+<status status="PASS" start="2024-10-04T14:07:59.276670" elapsed="0.005593"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:08:01.285255" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:07:59.282355" elapsed="2.005805"/>
+</kw>
+<arg>ios</arg>
+<status status="PASS" start="2024-10-04T14:07:57.260637" elapsed="4.028657"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-04T14:08:03.293736" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-04T14:08:01.290202" elapsed="2.006202"/>
+</kw>
+<kw name="Scoll Back" owner="ScroollPage">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${platform}' == 'android'</arg>
+<arg>Click Element</arg>
+<arg>${BACK_BUTTON_ANDROID}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:08:03.299925" elapsed="0.000655"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-04T14:08:03.305615" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name='Back']'.</msg>
+<msg time="2024-10-04T14:08:03.997202" level="INFO">xpath criteria: //XCUIElementTypeButton[@name='Back']</msg>
+<arg>${BACK_BUTTON_IOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-04T14:08:03.301112" elapsed="0.696349"/>
+</kw>
+<arg>'${platform}' == 'ios'</arg>
+<arg>Click Element</arg>
+<arg>${BACK_BUTTON_IOS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-04T14:08:03.300808" elapsed="0.696804"/>
+</kw>
+<arg>ios</arg>
+<status status="PASS" start="2024-10-04T14:08:03.297955" elapsed="0.699749"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-10-04T14:08:04.007181" elapsed="1.163400"/>
+</kw>
+<status status="PASS" start="2024-10-04T14:07:23.389582" elapsed="41.781622"/>
+</test>
+<status status="PASS" start="2024-10-04T14:07:22.287518" elapsed="42.885107"/>
+</suite>
+<status status="PASS" start="2024-10-04T14:07:22.276213" elapsed="42.897665"/>
+</suite>
+<status status="PASS" start="2024-10-04T14:07:22.245352" elapsed="42.928932"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="DemoRobotFramework">DemoRobotFramework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TestCase">DemoRobotFramework.TestCase</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="AppTestCase">DemoRobotFramework.TestCase.AppTestCase</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-04T14:07:39.635063" level="WARN">hello 0</msg>
+</errors>
+</robot>
